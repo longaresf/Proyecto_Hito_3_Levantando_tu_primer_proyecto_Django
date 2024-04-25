@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block mi_contenedor %}
+<div class="col-12 col-md-6 offset-0 offset-md-3 mt-4 mb-4">
+    <h3 class="text-center">Registro de Flanes</h3>
+
+    <form action="{% url 'registro_flanes' %}" method="POST">
+        {% csrf_token %}
+        <div class="mb-3">
+            <label for="exampleInputUuid" class="form-label">uuid</label>
+            <input type="text" class="form-control" id="flan_uuid" name="flan_uuid">
+          </div>
+            <div class="mb-3">
+              <label for="exampleInputName" class="form-label">Nombre del Flan</label>
+              <input type="text" class="form-control" id="name" name="name" size="64">
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputDescription" class="form-label">Descripción</label>
+              <textarea id="description" class="form-control" name="description" rows="4" cols="50"></textarea>
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputImage_url" class="form-label">URL Imagen</label>
+                <input type="text" class="form-control" id="image_url" name="image_url" size="200">
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputSlug" class="form-label">Slug</label>
+                <input type="text" class="form-control" id="slug" name="slug">
+            </div>
+            <div class="col-1">
+                <label for="exampleInputIs_private"class="form-label">Is_private</label>
+                <input type="checkbox" class="form-control" id="is_private" name="is_private" value="False" checked>
+            </div>
+           
+            <button type="submit" class="btn btn-primary float-center">Enviar</button>
+    </form>
+    {{form.non_field_errors}}
+    <div class="text-danger">
+        {{form.slug.errors}}
+    </div>
+</div>
+{% endblock %}

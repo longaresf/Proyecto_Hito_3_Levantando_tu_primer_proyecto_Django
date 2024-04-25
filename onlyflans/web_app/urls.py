@@ -15,7 +15,7 @@ Including another URLconf
 """
 
 from django.urls import path
-from web_app.views import index, bienvenido, acerca, base, contacto, obtener_flanes, contacto2
+from web_app.views import index, bienvenido, acerca, base, contacto, obtener_flanes, contacto2, salir, register, registro_flanes
 
 urlpatterns = [
     path('', index, name= 'index'),
@@ -24,4 +24,7 @@ urlpatterns = [
     path('base', base),
     path('contacto', contacto, name= 'contacto'),
     path('contacto', contacto2, name= 'contacto2'),
+    path('logout', salir, name= 'salir'),
+    path('registration', register, name= 'register'),
+    path('registro_flanes', registro_flanes, name= 'registro_flanes'),
 ] # + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

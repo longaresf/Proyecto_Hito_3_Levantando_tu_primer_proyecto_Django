@@ -40,6 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    "crispy_forms",
+    "crispy_bootstrap5",
 ]
 
 MIDDLEWARE = [
@@ -69,6 +71,10 @@ TEMPLATES = [
         },
     },
 ]
+
+CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
+
+CRISPY_TEMPLATE_PACK = "bootstrap5"
 
 WSGI_APPLICATION = 'onlyflans.wsgi.application'
 
@@ -131,3 +137,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR,'web_app/media/img/productos')
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+LOGIN_REDIRECT_URL = '/bienvenido'
+LOGOUT_REDIRECT_URL = '/'
+
